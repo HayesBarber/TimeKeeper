@@ -23,9 +23,8 @@ void setup() {
 }
 
 void loop() {
-  char buffer[10];
-  tk.getTime12Hour(buffer, sizeof(buffer));
-  Serial.println(buffer);
+  String time = tk.getTime12Hour();
+  Serial.println(time);
   delay(1000);
 }
 ```
