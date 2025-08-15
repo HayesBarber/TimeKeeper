@@ -11,6 +11,11 @@ void TimeKeeper::setEpochSeconds(const char *epochTimeSeconds) {
   _lastUpdateMillis = millis();
 }
 
+void TimeKeeper::setEpochSeconds(const unsigned long epochTimeSeconds) {
+  _epochSeconds = epochTimeSeconds;
+  _lastUpdateMillis = millis();
+}
+
 unsigned long TimeKeeper::getEpochSeconds() {
   if (_lastUpdateMillis == 0)
     return 0;
