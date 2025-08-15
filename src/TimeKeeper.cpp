@@ -35,8 +35,8 @@ unsigned long TimeKeeper::getEpochSeconds() {
 String TimeKeeper::getTime12Hour() {
   String period = "AM";
   unsigned long epoch = getEpochSeconds();
-  int hours = ((epoch % 86400) / 3600);
-  int minutes = ((epoch % 3600) / 60);
+  int hours = (epoch % 86400) / 3600;
+  int minutes = (epoch % 3600) / 60;
   int hour12 = hours;
 
   if (hours == 0) {
