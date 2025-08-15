@@ -7,6 +7,7 @@ public:
   TimeKeeper();
   void setEpochSeconds(const char *epochTimeSeconds);
   unsigned long getEpochSeconds();
+  String getTime12Hour();
 
 private:
   unsigned long _epochSeconds;

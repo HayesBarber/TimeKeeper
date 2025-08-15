@@ -17,3 +17,26 @@ unsigned long TimeKeeper::getEpochSeconds() {
 
   return _epochSeconds + ((millis() - _lastUpdateMillis) / 1000);
 }
+
+String TimeKeeper::getTime12Hour() {
+  String period = "AM";
+  unsigned long epoch = getEpochSeconds();
+  int hours = ((epoch % 86400) / 3600);
+  int minutes = ((epoch % 3600) / 60);
+  int hour12 = hours;
+
+  if (hours == 0) {
+    hour12 = 12;
+  } else if (hours == 12) {
+    period = "PM";
+  } else if (hours > 12) {
+    hour12 = hours - 12;
+    period = "PM";
+  }
+
+  String formattedTime =
+      String(hour12) + ":" +
+      (minutes < 10 ? "0" + String(minutes) : String(minutes)) + " " + period;
+
+  return formattedTime;
+}
