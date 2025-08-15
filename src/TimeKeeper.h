@@ -1,12 +1,14 @@
 #pragma once
 
+#include <Arduino.h>
+
 class TimeKeeper {
 public:
   TimeKeeper();
-  void setEpochTime(const char *epochTime);
-  unsigned long getEpochTime();
+  void setEpochSeconds(const char *epochTimeSeconds);
+  unsigned long getEpochSeconds();
 
 private:
-  unsigned long _epochTime;
-  unsigned long _lastUpdate;
+  unsigned long _epochSeconds;
+  unsigned long _lastUpdateMillis;
 };
