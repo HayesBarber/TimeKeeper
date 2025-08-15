@@ -16,6 +16,15 @@ void TimeKeeper::setEpochSeconds(const unsigned long epochTimeSeconds) {
   _lastUpdateMillis = millis();
 }
 
+void TimeKeeper::setEpochSeconds(const String epochTimeSeconds) {
+  if (epochTimeSeconds.length() == 0) {
+    return;
+  }
+
+  _epochSeconds = epochTimeSeconds.toInt();
+  _lastUpdateMillis = millis();
+}
+
 unsigned long TimeKeeper::getEpochSeconds() {
   if (_lastUpdateMillis == 0)
     return 0;
