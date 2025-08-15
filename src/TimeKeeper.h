@@ -19,7 +19,7 @@ public:
   /**
    * @brief Set the epoch time in seconds from a C-style string.
    * @param epochTimeSeconds Null-terminated string representing seconds since
-   * Unix epoch.
+   * epoch.
    */
   void setEpochSeconds(const char *epochTimeSeconds);
 
