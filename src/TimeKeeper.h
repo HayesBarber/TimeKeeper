@@ -19,7 +19,7 @@ public:
   /**
    * @brief Set the epoch time in seconds from a C-style string.
    * @param epochTimeSeconds Null-terminated string representing seconds since
-   * Unix epoch.
+   * epoch.
    */
   void setEpochSeconds(const char *epochTimeSeconds);
 
@@ -46,6 +46,14 @@ public:
    * @return String formatted as "HH:MM AM/PM".
    */
   String getTime12Hour();
+
+  /**
+   * @brief Determine if the given 12-hour formatted time string is considered
+   * night. Nighttime is defined as between 11:00 PM and 6:45 AM.
+   * @param currentTime String in the format "HH:MM AM/PM".
+   * @return true if night, false otherwise.
+   */
+  static bool isNight(String &currentTime);
 
 private:
   unsigned long _epochSeconds;

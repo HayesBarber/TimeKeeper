@@ -1,6 +1,6 @@
 # TimeKeeper
 
-TimeKeeper is a simple Arduino library for tracking epoch time in seconds and formatting it as a 12-hour clock string. It supports setting the current time from a C-string, unsigned long, or Arduino String.
+TimeKeeper is a simple Arduino library for tracking epoch time in seconds and formatting it as a 12-hour clock string. It supports setting the current time from a C-string, unsigned long, or Arduino String, and provides a utility to determine if a given time is considered night (11:00 PM to 6:45 AM).
 
 ## Usage Example
 
@@ -25,6 +25,13 @@ void setup() {
 void loop() {
   String time = tk.getTime12Hour();
   Serial.println(time);
+
+  if (TimeKeeper::isNight(time)) {
+    Serial.println("It's night!");
+  } else {
+    Serial.println("It's day!");
+  }
+
   delay(1000);
 }
 ```
