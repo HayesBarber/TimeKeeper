@@ -1,0 +1,12 @@
+{
+  "name": "TimeKeeper",
+  "version": "0.1.0",
+  "description": "Track epoch time in seconds and format time.",
+  "frameworks": "arduino",
+  "license": "MIT",
+  "platforms": ["espressif32"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HayesBarber/TimeKeeper.git"
+  }
+}
