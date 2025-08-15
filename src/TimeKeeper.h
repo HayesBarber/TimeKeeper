@@ -3,7 +3,7 @@
 class TimeKeeper {
 public:
   TimeKeeper();
-  void setEpochTime(String epochTime);
+  void setEpochTime(const char *epochTime);
   unsigned long getEpochTime();
 
 private:
