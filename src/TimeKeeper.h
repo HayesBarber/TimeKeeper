@@ -49,7 +49,7 @@ public:
 
   /**
    * @brief Determine if the given 12-hour formatted time string is considered
-   * night.
+   * night. Nighttime is defined as between 11:00 PM and 6:45 AM.
    * @param currentTime String in the format "HH:MM AM/PM".
    * @return true if night, false otherwise.
    */
