@@ -54,3 +54,26 @@ String TimeKeeper::getTime12Hour() {
 
   return formattedTime;
 }
+
+bool TimeKeeper::isNight(String &currentTime) {
+  if (currentTime.length() == 0) {
+    return false;
+  }
+
+  int hour = currentTime.substring(0, currentTime.indexOf(':')).toInt();
+  int minute =
+      currentTime
+          .substring(currentTime.indexOf(':') + 1, currentTime.indexOf(' '))
+          .toInt();
+  String period = currentTime.substring(currentTime.indexOf(' ') + 1);
+
+  if (period == "PM" && hour == 11) {
+    return true;
+  } else if (period == "AM") {
+    if (hour < 7 || (hour == 6 && minute < 45)) {
+      return true;
+    }
+  }
+
+  return false;
+}

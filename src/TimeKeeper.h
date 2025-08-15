@@ -47,6 +47,14 @@ public:
    */
   String getTime12Hour();
 
+  /**
+   * @brief Determine if the given 12-hour formatted time string is considered
+   * night.
+   * @param currentTime String in the format "HH:MM AM/PM".
+   * @return true if night, false otherwise.
+   */
+  static bool isNight(String &currentTime);
+
 private:
   unsigned long _epochSeconds;
   unsigned long _lastUpdateMillis;
