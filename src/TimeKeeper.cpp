@@ -70,7 +70,7 @@ bool TimeKeeper::isNight(String &currentTime) {
   if (period == "PM" && hour == 11) {
     return true;
   } else if (period == "AM") {
-    if (hour < 7 || (hour == 6 && minute < 45)) {
+    if (hour == 12 || hour < 7) {
       return true;
     }
   }
